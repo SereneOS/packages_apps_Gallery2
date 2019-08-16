@@ -124,6 +124,7 @@ public class GLES11Canvas implements GLCanvas {
 
     @Override
     public void setSize(int width, int height) {
+        Utils.assertTrue(width >= 0 && height >= 0);
 
         if (mTargetTexture == null) {
             mScreenWidth = width;
@@ -151,6 +152,7 @@ public class GLES11Canvas implements GLCanvas {
 
     @Override
     public void setAlpha(float alpha) {
+        Utils.assertTrue(alpha >= 0 && alpha <= 1);
         mAlpha = alpha;
     }
 
@@ -161,6 +163,7 @@ public class GLES11Canvas implements GLCanvas {
 
     @Override
     public void multiplyAlpha(float alpha) {
+        Utils.assertTrue(alpha >= 0 && alpha <= 1);
         mAlpha *= alpha;
     }
 

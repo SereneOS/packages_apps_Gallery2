@@ -21,7 +21,7 @@ import android.graphics.Matrix;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
-import android.renderscript.Script;
+import android.renderscript.Script.LaunchOptions;
 import android.renderscript.Type;
 
 import com.android.gallery3d.R;

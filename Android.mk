@@ -5,8 +5,10 @@ include $(CLEAR_VARS)
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_STATIC_ANDROID_LIBRARIES := \
-    android-support-v4 \
-    android-support-v13
+    androidx.fragment_fragment \
+    androidx.legacy_legacy-support-core-ui \
+    androidx.core_core \
+    androidx.legacy_legacy-support-v13
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     com.android.gallery3d.common2 \
@@ -20,7 +22,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_RESOURCE_DIR += $(LOCAL_PATH)/res
 
-LOCAL_AAPT_FLAGS := --auto-add-overlay
+LOCAL_USE_AAPT2 := true
 
 LOCAL_USE_AAPT2 := true
 
@@ -41,6 +43,8 @@ LOCAL_JNI_SHARED_LIBRARIES := \
 LOCAL_PROGUARD_ENABLED := disabled
 
 LOCAL_JAVA_LIBRARIES := org.apache.http.legacy
+
+LOCAL_JARJAR_RULES := $(LOCAL_PATH)/jarjar-rules.txt
 
 include $(BUILD_PACKAGE)
 
